@@ -10,14 +10,13 @@ MUX_iParol is an Arduino library for controlling a 15x15 matrix of LEDs using th
 ## Usage
 ### Basic Example
 ```cpp
-#include "MUX_iParol.h"
+#include "iParol.h"
 
 void setup() {
     iParol_Init();
 }
 
 void loop() {
-    //you dont need to write anything here
     for(byte i = 1; i<=225; i++){
         write(i, HIGH);
     }
