@@ -1,7 +1,7 @@
 /*
   Empowerment Technology
   iParol v2 (PHS)
-  s.2023
+  s.2024
 */
 
 //******************************************
@@ -13,11 +13,12 @@
 #include "iParol.h"
 
 void setup() {
-    iParol_Init();
+    iParol_Init(3); // Optionally, you can enter a brightness level from 1 - 15 only.
 }
 
 void loop() {
-    //you dont need to write anything here
+    // This example will blink all leds for 0.1 second
+
     for(byte i = 1; i<=225; i++){
         write(i, HIGH);
     }
