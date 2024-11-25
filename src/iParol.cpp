@@ -5,8 +5,6 @@
 #define CLK 2
 #define DEV 4       // Number of Devices
 
-#define END nullptr
-
 static LedControl lc = LedControl(DIN, CLK, CS, DEV);
 
 void iParol_Init(int intensity=15) {
@@ -27,13 +25,6 @@ void write(byte pin, bool state) {
     row -= (row >= 8) * 8;
 
     lc.setLed(addr, row, col, state);
-}
-
-template <typename T, byte N>
-void write(T (&arr)[N], bool state) {
-  for (size_t i = 0; i < N; ++i) {
-    write(arr[i], state);
-  }
 }
 
 void write(byte** arr, bool state) {
